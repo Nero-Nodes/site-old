@@ -14,6 +14,7 @@ func main() {
 
 	fmt.Println("[DAEMON] app started on port 3000")
 
+	app.Static("/assets", "./assets")
 	app.Static("/", "./public/index.html")
 	app.Static("*", "./public/error.html")
 

@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/redirect/v2"
 )
 
 func main() {
@@ -13,6 +14,13 @@ func main() {
 	app := fiber.New()
 
 	fmt.Println("[DAEMON] app started on port 3000")
+
+	app.Use(redirect.New(redirect.Config{
+		Rules: map[string]string{
+			"/discord": "https://discord.gg/SaGgzDDEtG",
+		},
+		StatusCode: 301,
+	}))
 
 	app.Static("/assets", "./assets")
 	app.Static("/", "./public/index.html")

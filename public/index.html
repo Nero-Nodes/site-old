@@ -223,8 +223,8 @@ Coded by www.creative-tim.com
         </div>
         <div class="col-md-3">
           <h1 class="text-gradient text-info"><span id="countup_2">0</span>+</h1>
-          <h5>Million</h5>
-          <p>API requests each month. That's a lot of requests.</p>
+          <h5>Registered Users</h5>
+          <p>Valued customers that love the service that we offer.</p>
         </div>
         <div class="col-md-3">
           <h1 class="text-gradient text-info"><span id="countup_3">0</span>/7</h1>
@@ -321,22 +321,24 @@ Coded by www.creative-tim.com
 
   <script>
     $(document).ready(function() {
+      let data;
+      $.get('https://client.neronodes.net/api/stats', (res) => data = res);
 
-      const countUp_1 = new CountUp('countup_1', 5);
+      const countUp_1 = new CountUp('countup_1', data.one);
       if (!countUp_1.error) {
         countUp_1.start();
       } else {
         console.error(countUp_1.error);
       }
       
-      const countUp_2 = new CountUp('countup_2', 5);
+      const countUp_2 = new CountUp('countup_2', data.two);
       if (!countUp_2.error) {
         countUp_2.start();
       } else {
         console.error(countUp_2.error);
       }
 
-      const countUp_3 = new CountUp('countup_3', 5);
+      const countUp_3 = new CountUp('countup_3', 24);
       if (!countUp_3.error) {
         countUp_3.start();
       } else {

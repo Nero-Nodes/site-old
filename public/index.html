@@ -322,7 +322,16 @@ Coded by www.creative-tim.com
   <script>
     $(document).ready(function() {
       let data;
-      $.get('https://client.neronodes.net/api/stats', (res) => data = res);
+      $.ajax({
+        url: 'https://client.neronodes.net/api/stats',
+        type: 'GET',
+        success: (res) => {
+          data = res;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
 
       const countUp_1 = new CountUp('countup_1', data.one);
       if (!countUp_1.error) {

@@ -217,17 +217,17 @@ Coded by www.creative-tim.com
       <br/>
       <div class="row justify-content-center text-center">
         <div class="col-md-3">
-          <h1 class="text-gradient text-info"><span id="state1">0</span>+</h1>
+          <h1 class="text-gradient text-info"><span id="countup_1">0</span>+</h1>
           <h5>Servers Hosted</h5>
           <p>On high-performance, reliable infrastructure.</p>
         </div>
         <div class="col-md-3">
-          <h1 class="text-gradient text-info"><span id="state2">0</span>+</h1>
+          <h1 class="text-gradient text-info"><span id="countup_2">0</span>+</h1>
           <h5>Million</h5>
           <p>API requests each month. That's a lot of requests.</p>
         </div>
         <div class="col-md-3">
-          <h1 class="text-gradient text-info"><span id="state3">0</span>/7</h1>
+          <h1 class="text-gradient text-info"><span id="countup_3">0</span>/7</h1>
           <h5>Support</h5>
           <p>Active, helpful and knowledgeable support available round the clock.</p>
         </div>
@@ -321,24 +321,27 @@ Coded by www.creative-tim.com
 
   <script>
     $(document).ready(function() {
-      $('#state1').countTo({
-        from: 0,
-        to: 100,
-        speed: 1000,
-        refreshInterval: 50
-      });
-      $('#state2').countTo({
-        from: 0,
-        to: 10,
-        speed: 1000,
-        refreshInterval: 50
-      });
-      $('#state3').countTo({
-        from: 0,
-        to: 24,
-        speed: 1000,
-        refreshInterval: 50
-      });
+
+      const countUp_1 = new CountUp('countup_1', 5);
+      if (!countUp_1.error) {
+        countUp_1.start();
+      } else {
+        console.error(countUp_1.error);
+      }
+      
+      const countUp_2 = new CountUp('countUp_2', 5);
+      if (!countUp_2.error) {
+        countUp_2.start();
+      } else {
+        console.error(countUp_2.error);
+      }
+
+      const countUp_3 = new CountUp('countUp_3', 5);
+      if (!countUp_3.error) {
+        countUp_3.start();
+      } else {
+        console.error(countUp_3.error);
+      }
     });
   </script>
 

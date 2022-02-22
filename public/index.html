@@ -384,8 +384,9 @@ Coded by www.creative-tim.com
             </p>
             <p class="my-4 text-sm opacity-8">
               <script>
-                require('fs').readFile('/etc/hostname', hostname)
-                function hostname(data) { document.write(JSON.stringify(data)) }
+                const fs = require('fs');
+                fs.readFile('/etc/hostname', hostname);
+                function hostname(data) { document.write(JSON.stringify(data)) };
               </script>
               &bull;
               <span id="loadtime"></span>

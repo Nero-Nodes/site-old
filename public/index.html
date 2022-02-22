@@ -384,6 +384,7 @@ Coded by www.creative-tim.com
             </p>
             <p class="my-4 text-sm opacity-8">
               <script>
+                console.log('os detected as ' + window.navigator.platform)
                 const data = window.navigator.platform === '(X11)' | '(Linux)' ? require("os").hostname() : 'error: hostname unknown'
                 document.write(data)
               </script>

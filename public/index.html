@@ -31,9 +31,21 @@ Coded by www.creative-tim.com
   <title>
     Nero Nodes
   </title>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/d263c7ffd5.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link id="pagestyle" href="/assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
+
+  <script type="text/javascript">
+    const timerStart = Date.now();
+  </script>
+
+  <script type="text/javascript">
+    $(window).load(function() {
+      document.getElementById("loadtime").innerHTML = ((Date.now() - timerStart) / 1000) + 's'
+    });
+  </script>
+
 </head>
 <body class="about-us">
     <div class="container position-sticky z-index-sticky top-0">
@@ -372,8 +384,11 @@ Coded by www.creative-tim.com
             </p>
             <p class="my-4 text-sm opacity-8">
               <script>
-                document.write(location.hostname)
+                const data = window.navigator.platform === 'X11' | 'Linux' ? require("os").hostname() : 'error: hostname unknown'
+                document.write(data)
               </script>
+              &bull;
+              <span id="loadtime"></span>
             </p>
           </div>
         </div>

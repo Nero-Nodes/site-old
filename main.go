@@ -26,6 +26,7 @@ func main() {
 	// Create the routes for pages and assets.
 	app.Static("/assets", "./assets")
 	app.Static("/", "./public/index.html")
+	app.Static("/cancel", "./public/cancel.html")
 	app.Static("*", "./public/error.html")
 
 	// Listen on port 3000 for incoming requests.
